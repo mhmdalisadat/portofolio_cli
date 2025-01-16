@@ -7,11 +7,16 @@ import { Center, OrbitControls } from '@react-three/drei';
 import { myProjects } from '../constants/index.js';
 import CanvasLoader from '../components/Loading.jsx';
 import DemoComputer from '../components/DemoComputer.jsx';
+import useWorks from '../hooks/useWorks.js';
 
 const projectCount = myProjects.length;
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+
+  const { data } = useWorks();
+
+  console.log(data);
 
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) => {

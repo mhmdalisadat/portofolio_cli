@@ -3,7 +3,8 @@ import Globe from 'react-globe.gl';
 
 import Button from '../components/Button.jsx';
 import useBlog from '../hooks/useBlog.js';
-import pic from '../../assets/img.jpg';
+import pic from '../../assets/me2.png';
+import pic2 from '../../assets/code.png';
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
@@ -13,7 +14,6 @@ const About = () => {
     if (data?.email) {
       navigator.clipboard.writeText(data.email);
       setHasCopied(true);
-
       setTimeout(() => {
         setHasCopied(false);
       }, 2000);
@@ -32,25 +32,21 @@ const About = () => {
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <img src={pic} alt="profile" className="w-full sm:h-[276px] h-fit object-contain" />
-
             <div>
               <p className="grid-headtext">{userData.title}</p>
               <p className="grid-subtext">{userData.description}</p>
             </div>
           </div>
         </div>
-
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/grid2.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" />
-
+            <img src={pic2} alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" />
             <div>
               <p className="grid-headtext">{userData.techTitle}</p>
               <p className="grid-subtext">{userData.techDesc}</p>
             </div>
           </div>
         </div>
-
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
             <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">

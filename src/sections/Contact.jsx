@@ -28,15 +28,12 @@ const Contact = () => {
     <section className="c-space my-20" id="contact">
       {alert.show && <Alert {...alert} />}
 
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
-        <img src="/assets/terminal.png" alt="terminal-bg" className="absolute inset-0 min-h-screen" />
-
-        <div className="contact-container">
-          <h3 className="head-text">Let's talk</h3>
-          <p className="text-lg text-white-600 mt-3">
-            Whether you're looking to build a new website, improve your existing platform, or bring a unique project to
-            life, I'm here to help.
-          </p>
+      <div className="relative min-h-screen flex items-center justify-center flex-col px-4 sm:px-6 lg:px-8">
+        <img src="/assets/terminal.png" alt="terminal-bg" className="absolute inset-0 min-h-screen object-cover" />
+    
+        <div className="contact-container w-full max-w-lg mx-auto">
+          <h3 className="head-text text-2xl md:text-3xl">Let's talk</h3>
+          <p className="text-lg text-white-600 mt-3">Contact Me for Job Opportunities</p>
 
           <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
             <label className="space-y-3">
@@ -47,7 +44,7 @@ const Contact = () => {
                 value={form.name}
                 onChange={handleChange}
                 required
-                className="field-input"
+                className="field-input w-full p-2 border border-gray-300 rounded-md"
                 placeholder="ex., John Doe"
               />
             </label>
@@ -59,7 +56,7 @@ const Contact = () => {
                 value={form.phone}
                 onChange={handleChange}
                 required
-                className="field-input"
+                className="field-input w-full p-2 border border-gray-300 rounded-md"
               />
             </label>
             <label className="space-y-3">
@@ -70,7 +67,7 @@ const Contact = () => {
                 value={form.email}
                 onChange={handleChange}
                 required
-                className="field-input"
+                className="field-input w-full p-2 border border-gray-300 rounded-md"
                 placeholder="ex., johndoe@gmail.com"
               />
             </label>
@@ -83,15 +80,18 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="field-input"
+                className="field-input w-full p-2 border border-gray-300 rounded-md"
                 placeholder="Share your thoughts or inquiries..."
               />
             </label>
 
-            <button className="field-btn" type="submit" onClick={handleSubmit}>
+            <button
+              className="field-btn w-full py-2 bg-blue-500 text-white rounded-md"
+              type="submit"
+              onClick={handleSubmit}>
               {loading ? 'Sending...' : 'Send Message'}
 
-              <img src="/assets/arrow-up.png" alt="arrow-up" className="field-btn_arrow" />
+              <img src="/assets/arrow-up.png" alt="arrow-up" className="field-btn_arrow inline-block ml-2" />
             </button>
           </form>
         </div>
